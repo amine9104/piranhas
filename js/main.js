@@ -146,7 +146,9 @@
       }
       if (this.isPaused) {
         this.isPaused = false;
-        this.start();
+        this.chunkStart = Date.now();
+        this.timestamp = Date.now();
+        requestAnimationFrame(step);
       } else {
         this.isPaused = true;
       }
